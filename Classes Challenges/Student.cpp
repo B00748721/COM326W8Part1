@@ -36,7 +36,8 @@ Student::Student(std::string name) {
 //This constructor creates and initialises it by copying the data from each variable
 //into the specified data member. We use an initializer list but we could also initialize each
 //variable by using assignment statements in the main body of the function
-Student::Student(std::string name, std::string registration, std::string course, int yearofStudy) : name_{ name }, registrstionID_{ registration }, course_{ course},
+Student::Student(std::string name, std::string email, std::string registration, std::string course, int yearofStudy)
+	:Person(name, email) , registrstionID_{ registration }, course_{ course},
 	yearofStudy_{ yearofStudy}
 {
 	std::cout << "The second custom Student class constructor was called to create " << name_ << std::endl;
@@ -68,14 +69,14 @@ bool Student::operator==(const Student& right) const {
 }
 
 //Getters and setters
-void Student::SetName(std::string name) {
-	name_ = name;
-}
+//void Student::SetName(std::string name) {
+//	name_ = name;
+//}
 //Make getters const so that it tells the compiler to complain if we accidentlly 
 //try to change a data member 
-std::string Student::GetName() const {
-	return name_;
-}
+//std::string Student::GetName() const {
+//	return name_;
+//}
 
 void Student::SetRegistrationID(std::string registrstionID) {
 	registrstionID_ = registrstionID;
